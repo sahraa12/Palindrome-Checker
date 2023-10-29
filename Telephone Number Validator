@@ -1,0 +1,10 @@
+function telephoneCheck(str) {
+// Use a regular expression to match the valid phone number formats
+ const regex = /^(1\s?)?(\(\d{3}\)|\d{3})([\s\-]?)\d{3}([\s\-]?)\d{4}$/;
+ 
+ // Test if the input string matches the regex
+ return regex.test(str);
+}
+ 
+// Test the function with example input
+console.log(telephoneCheck("555-555-5555")); // Should return true
