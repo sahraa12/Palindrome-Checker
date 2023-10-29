@@ -1,0 +1,17 @@
+function rot13(str) {
+ let decoded = "";
+ let alphabet = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
+ for(let i=0;i<str.length;i++) {
+   if(str[i].match(/\W/)) {
+     decoded += str[i];
+   }
+   alphabet.forEach(elem => {if(str[i] === elem && alphabet.indexOf(str[i])-13 >= 0) {
+     decoded += alphabet[alphabet.indexOf(str[i])-13];
+   }
+   else if(str[i] === elem && alphabet.indexOf(str[i])-13 < 0) {
+     decoded += alphabet[alphabet.indexOf(str[i])+13];
+   };
+   });
+ }
+ return decoded;
+}
